@@ -1,0 +1,12 @@
+{
+    "name": "application-name"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.8"
+    , "string": "1.1.x"
+    , "request": "2.12.x"
+    , "htmlparser": "1.7.x"
+    , "soupselect": "0.2.x"
+  }
+}
