@@ -8,5 +8,6 @@
     , "request": "2.12.x"
     , "htmlparser": "1.7.x"
     , "soupselect": "0.2.x"
+    , "caching": "0.1.4"
   }
 }

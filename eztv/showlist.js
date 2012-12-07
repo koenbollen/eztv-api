@@ -6,11 +6,12 @@ var select = require("soupselect").select;
 
 var utils = require("../utils");
 
+var cache = GLOBAL.cache;
+
 module.exports = function(req, res)
 {
-    request("http://eztv.it/showlist/", function(err, result, body) {
-        if(err) throw err;
-        if( result.statusCode != 200 ) throw new Error("Invalid statusCode: " + result.statusCode);
+    utils.cachedrequest("http://eztv.it/showlist/", 10000, function(err, response, body) {
+        if (err) throw err;
         var handler = new htmlparser.DefaultHandler(function (err, dom) {
             if (err) throw err;
             var list = [];
