@@ -8,6 +8,7 @@ var routes = require('./routes');
 var Caching = require('caching');
 
 var showlist = require( "./eztv/showlist" );
+var myshows = require( "./eztv/myshows" );
 
 
 var app = module.exports = express.createServer();
@@ -30,6 +31,8 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.get('/showlist', showlist);
+app.get('/myshows', myshows.index);
+app.get('/myshows/list', myshows.list);
 
 GLOBAL.cache = new Caching("memory");
 
